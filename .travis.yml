@@ -1,22 +1,22 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
 dist: trusty
-
 addons:
   chrome: stable
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - "$HOME/.npm"
 env:
   global:
-    # See https://git.io/vdao3 for details.
-    - JOBS=1
-
+  - JOBS=1
 before_install:
-  - npm config set spin false
+- npm config set spin false
+deploy:
+  provider: heroku
+  api_key:
+    secure: RCeX52L6BBu3zRINd1a4xLaVI/ibE8oro8AlGfm6t1VF7juazUs+gqI1eIOly3ct6ltk4DQsl49R4Fpno7R6mlDH2hIB0Tc46aBOx7g5mGp+utjoYVk7NjKHJ8vGCVFt9Q8/0QGqaEeK7vauXRcPoMS0sx+bM0TWIVPhZPTcw7UVrhOIw7r3naPolqjkavHdMwOcnXAXxQkrD1CdrkdqryAcFlxJ4ka437caUu7+Tb23yhwan5X/Gi2jmSHWlH9uO5LqI8KPT/ZUWnClGZhLOOjf6PXi2aKnDlySqnSnGZN//Bu3SJf+0WWRgzeDURP+eZq7fS/kBvtyfQD2c3TRR7IiFMs9qXMaUkX9JUAoSFhji//WHA60CMPpNp8HlBuNtHJLev0FH9reVReDUZtoy1raBxF08DvBEmmG9e1XiIwBd0AiE6mKjVdta40f6y35T8PdMHqTdYNXXej49XNh30E6MyKFK7Qf5e8TcnTDf/rfygq1sSPIBNf7vEjh+JXEjz2xd4KECOlGtrISQnZOoVFPOjoA/9hfVFNJ5BXiu1a5cqeeQnjqyHbZVD6ReLPNsu5R9J/BZD0nMuSb98YUKmvDkuZRtOk52jJW0gdk1+5D8Hwr1YHvtfAz7pRUdlQRZgRovxD/5fnvHUMNNiL/RAWwnkpa9o0tRAJ96HYgT40=
+  app: serene-cliffs-85026
+  on:
+    repo: yrsdi/peepchat
